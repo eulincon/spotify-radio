@@ -11,7 +11,7 @@ export default {
 		root,
 		publicDirectory,
 		audioDirectory,
-		songsDirectory: join(audioDirectory, 'songs'),
+		songsDirectory,
 		fxDirectory: join(audioDirectory, 'fx'),
 	},
 	pages: {
@@ -30,6 +30,7 @@ export default {
 		audioMediaType: 'mp3',
 		songVolume: '0.99',
 		fallbackBitRate: '128000',
+		bitRateDivisor: 8,
 		englishConversation: join(songsDirectory, 'conversation.mp3'),
 	},
 }
