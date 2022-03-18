@@ -25,6 +25,17 @@ async function routes(req, res) {
 		const { stream } = await controller.getFileStream(controllerHTML)
 		return stream.pipe(res)
 	}
+	if (method == 'GET' && url.includes('/stream')) {
+		const { stream, onClose } = await controller.createClientStream()
+		req.once('close', onClose)
+		res.writeHead(200, {
+			'Content-Type': 'audio/mpeg',
+			'Accept-Ranges': 'bytes',
+		})
+		require('stream/promises')
+		return stream.pipe(res)
+	}
+	//files
 	if (method === 'GET') {
 		const { stream, type } = await controller.getFileStream(url)
 		const contentType = CONTENT_TYPE[type]

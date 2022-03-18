@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647402410599" clover="3.2.0">
-  <project timestamp="1647402410599" name="All files">
-    <metrics statements="56" coveredstatements="43" conditionals="20" coveredconditionals="20" methods="16" coveredmethods="9" elements="92" coveredelements="72" complexity="0" loc="56" ncloc="56" packages="2" files="6" classes="6"/>
+<coverage generated="1647560879338" clover="3.2.0">
+  <project timestamp="1647560879338" name="All files">
+    <metrics statements="56" coveredstatements="43" conditionals="20" coveredconditionals="19" methods="16" coveredmethods="9" elements="92" coveredelements="71" complexity="0" loc="56" ncloc="56" packages="2" files="6" classes="6"/>
     <package name="server">
-      <metrics statements="44" coveredstatements="36" conditionals="20" coveredconditionals="20" methods="9" coveredmethods="5"/>
-      <file name="config.js" path="/home/kali/Github/SPOTIFYRADIO/server/config.js">
-        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <metrics statements="44" coveredstatements="36" conditionals="20" coveredconditionals="19" methods="9" coveredmethods="5"/>
+      <file name="config.js" path="/spotify-radio/server/config.js">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
       </file>
-      <file name="controller.js" path="/home/kali/Github/SPOTIFYRADIO/server/controller.js">
+      <file name="controller.js" path="/spotify-radio/server/controller.js">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
       </file>
-      <file name="routes.js" path="/home/kali/Github/SPOTIFYRADIO/server/routes.js">
+      <file name="routes.js" path="/spotify-radio/server/routes.js">
         <metrics statements="28" coveredstatements="28" conditionals="18" coveredconditionals="18" methods="4" coveredmethods="4"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -47,7 +47,7 @@
         <line num="50" count="1" type="stmt"/>
         <line num="54" count="8" type="stmt"/>
       </file>
-      <file name="service.js" path="/home/kali/Github/SPOTIFYRADIO/server/service.js">
+      <file name="service.js" path="/spotify-radio/server/service.js">
         <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="8" count="1" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
@@ -58,7 +58,7 @@
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
       </file>
-      <file name="util.js" path="/home/kali/Github/SPOTIFYRADIO/server/util.js">
+      <file name="util.js" path="/spotify-radio/server/util.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
@@ -66,7 +66,7 @@
     </package>
     <package name="tests.unit._util">
       <metrics statements="12" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="4"/>
-      <file name="testUtil.js" path="/home/kali/Github/SPOTIFYRADIO/tests/unit/_util/testUtil.js">
+      <file name="testUtil.js" path="/spotify-radio/tests/unit/_util/testUtil.js">
         <metrics statements="12" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="4"/>
         <line num="6" count="12" type="stmt"/>
         <line num="8" count="0" type="stmt"/>

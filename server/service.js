@@ -1,6 +1,8 @@
+import { randomUUID } from 'crypto'
 import fs from 'fs'
 import fsPromises from 'fs/promises'
 import { extname, join } from 'path'
+import { PassThrough } from 'stream'
 import config from './config.js'
 
 const {
@@ -8,6 +10,25 @@ const {
 } = config
 
 export class Service {
+	constructor() {
+		this.clientStream = new Map()
+	}
+
+	createClientStream() {
+		const id = randomUUID()
+		const clientStream = new PassThrough()
+		this.clientStream.set(id, clientStream)
+
+		return {
+			id,
+			clientStream,
+		}
+	}
+
+	removeClientStream(id) {
+		this.clientStream.delete(id)
+	}
+
 	createFileStream(filename) {
 		return fs.createReadStream(filename)
 	}
