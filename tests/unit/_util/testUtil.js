@@ -8,15 +8,17 @@ export default class TestUtil {
 				for (const item of data) {
 					this.push(item)
 				}
+
 				this.push(null)
 			},
 		})
 	}
 
-	static generateWritableStream(dataonData) {
+	static generateWritableStream(onData) {
 		return new Writable({
 			write(chunk, enc, cb) {
 				onData(chunk)
+
 				cb(null, chunk)
 			},
 		})
@@ -38,6 +40,7 @@ export default class TestUtil {
 				end: jest.fn(),
 			}),
 		}
+
 		return {
 			values: () => Object.values(data),
 			...data,

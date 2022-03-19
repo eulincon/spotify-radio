@@ -2,7 +2,7 @@ const defaultConfig = {
 	coverageDirectory: 'coverage',
 	coverageProvider: 'v8',
 	coverageReporters: ['text', 'lcov'],
-	converageThreshold: {
+	coverageThreshold: {
 		global: {
 			branch: 100,
 			functions: 100,
