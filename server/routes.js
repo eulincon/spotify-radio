@@ -1,3 +1,4 @@
+import { once } from 'events'
 import config from './config.js'
 import { Controller } from './controller.js'
 import { logger } from './util.js'
@@ -32,9 +33,16 @@ async function routes(req, res) {
 			'Content-Type': 'audio/mpeg',
 			'Accept-Ranges': 'bytes',
 		})
-		require('stream/promises')
 		return stream.pipe(res)
 	}
+
+	if (method === 'POST' && url === '/controller') {
+		const data = await once(req, 'data')
+		const item = JSON.parse(data)
+		const result = await controller.handleCommand(item)
+		return res.end(JSON.stringify(result))
+	}
+
 	//files
 	if (method === 'GET') {
 		const { stream, type } = await controller.getFileStream(url)

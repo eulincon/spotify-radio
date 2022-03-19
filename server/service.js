@@ -84,6 +84,7 @@ export class Service {
 			},
 		})
 	}
+
 	async startStreamming() {
 		logger.info(`starting with ${this.currentSong}`)
 		const bitRate = (this.currentBitRate =
