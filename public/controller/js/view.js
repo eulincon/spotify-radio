@@ -16,7 +16,10 @@ export default class View {
 		Array.from(document.querySelectorAll('[name=command]')).forEach((btn) => {
 			const fn = hide ? 'add' : 'remove'
 			btn.classList[fn]('unassigned')
-			btn.onclick = () => {}
+			function onClickReset() {}
+			btn.onclick = () => {
+				btn.conclick = onClickReset
+			}
 		})
 	}
 
