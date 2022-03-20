@@ -37,13 +37,13 @@ services:
       - .:/spotify-radio
       - node_modules:/spotify-radio/node_modules
 
-  test-coverate: 
+  test-coverage: 
     image: spotify-radio
     build: .
     command:
       - npm
       - run
-      - test:coverate
+      - test:coverage
     volumes:
       - .:/spotify-radio
       - node_modules:/spotify-radio/node_modules

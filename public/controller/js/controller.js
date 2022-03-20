@@ -11,7 +11,10 @@ export default class Controller {
 	}
 
 	async commandReceived(text) {
-		console.log('controoller', text)
+		return this.service.makeRequest({
+			method: 'POST',
+			command: text,
+		})
 	}
 
 	onLoad() {
