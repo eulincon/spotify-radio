@@ -6,6 +6,7 @@ export default class View {
 		this.ignoreButton = new Set(['unassigned'])
 		async function onBtnClick() {}
 		this.onBtnClick = onBtnClick
+		this.DISABLE_BTN_TIMEOUT = 500
 	}
 	onLoad() {
 		this.changeCommandButtonsVisibility()
@@ -44,6 +45,30 @@ export default class View {
 			btn.onclick = this.onStopBtn.bind(this)
 			return
 		}
+
+		btn.onclick = this.onCommandClick.bind(this)
+	}
+
+	async onCommandClick(btn) {
+		const {
+			srcElement: { classList, innerText },
+		} = btn
+
+		this.toggleDisableCommandBtn(classList)
+		await this.onBtnClick(innerText)
+		setTimeout(
+			() => this.toggleDisableCommandBtn(classList),
+			this.DISABLE_BTN_TIMEOUT
+		)
+	}
+
+	toggleDisableCommandBtn(classList) {
+		if (!classList.contains('active')) {
+			classList.add('active')
+			return
+		}
+
+		classList.remove('active')
 	}
 
 	onStopBtn({ srcElement: { innerText } }) {
@@ -64,10 +89,7 @@ export default class View {
 			return
 		}
 
-		if (active) {
-			this.btnStart.classList.remove('hidden')
-			this.btnStop.classList.add('hidden')
-			return
-		}
+		this.btnStop.classList.add('hidden')
+		this.btnStart.classList.remove('hidden')
 	}
 }
